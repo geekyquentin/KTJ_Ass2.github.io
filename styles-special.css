@@ -1,0 +1,63 @@
+body.theme-special {
+	background-color: #263543;
+}
+
+.theme-special .dropbtn-themeswitch {
+	background-color: #ffd43b;
+	color: #263543;
+}
+
+.theme-special .dropdown-content-themeswitch {
+	background-color: #2e4153;
+	box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+	border-color: #425d75;
+}
+
+.theme-special .dropdown-content-themeswitch div {
+	color: white;
+}
+
+/* Change color of dropdown links on hover */
+.theme-special .dropdown-content-themeswitch div:hover {
+	background-color: #ffd43b;
+	color: #263543;
+}
+
+/* Dropdown button on hover & focus */
+.theme-special .dropbtn-themeswitch:hover,
+.theme-special .dropbtn-themeswitch:focus {
+	background-color: #ffc800;
+}
+
+.theme-special .heading,
+.theme-special .scoreboard-title {
+	color: #ffd43b;
+}
+
+.theme-special .newgame,
+.theme-special .time-moves,
+.theme-special .options-options,
+.theme-special .scoreboard-table tr th {
+	background-color: #ffd43b;
+	color: #263543;
+}
+
+.theme-special .newgame:hover,
+.theme-special .newgame:active,
+.theme-special .options-options:hover,
+.theme-special .options-options:focus {
+	background-color: #ffc800;
+}
+
+.theme-special .scoreboard-table tr td {
+	background-color: #2a3b4b;
+}
+
+.theme-special .scoreboard-table tr td.user-serial-value {
+	background-color: #fade7b;
+	color: #263543;
+}
+
+.theme-special .scoreboard-table tr td {
+	color: white;
+}

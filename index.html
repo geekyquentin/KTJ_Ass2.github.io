@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!--meta tags-->
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+		<!--title and favicon-->
+		<title>15 Puzzle Game</title>
+		<link rel="icon" href="Resources/Favicon.ico" type="image/x-icon" />
+
+		<!--links for bootstrap-->
+		<link
+			href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
+			rel="stylesheet"
+			integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x"
+			crossorigin="anonymous"
+		/>
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+		<!-- jQuery library -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<!-- Popper JS -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+		<!-- Latest compiled JavaScript -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+		<!--scripts for jquery-->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+
+		<!--links for css-->
+		<link href="styles.css" rel="stylesheet" type="text/css" />
+		<link href="styles-light.css" rel="stylesheet" type="text/css" />
+		<link href="styles-dark.css" rel="stylesheet" type="text/css" />
+		<link href="styles-dark2.css" rel="stylesheet" type="text/css" />
+		<link href="styles-purple.css" rel="stylesheet" type="text/css" />
+		<link href="styles-special.css" rel="stylesheet" type="text/css" />
+
+		<!--links for icons-->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+
+		<!--links for fonts-->
+		<link rel="preconnect" href="https://fonts.gstatic.com" />
+		<link href="https://fonts.googleapis.com/css2?family=PT+Serif:wght@700&display=swap" rel="stylesheet" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" />
+		<link href="https://fonts.googleapis.com/css2?family=Cookie&display=swap" rel="stylesheet" />
+	</head>
+
+	<body>
+		<div class="dropdown" style="zoom: 0.5">
+			<button onclick="myFunction()" id="dropbtn" class="dropbtn toggler dropbtn-themeswitch">
+				Theme<i id="spin" class="toggler fas fa-chevron-down"></i>
+			</button>
+			<div id="myDropdown" class="dropdown-content dropdown-content-theme dropdown-content-themeswitch">
+				<div class="theme" id="toggle-light">Light</div>
+				<div class="theme" id="toggle-dark">Dark</div>
+				<div class="theme" id="toggle-dark2">Dark 2</div>
+				<div class="theme" id="toggle-purple">Purple</div>
+				<div class="theme" id="toggle-special">Special</div>
+			</div>
+		</div>
+
+		<div>
+			<h1 class="heading">15 puzzle game</h1>
+			<div class="newgame-time-moves">
+				<input type="button" value="New Game" class="newgame" id="sw-rst" disabled />
+				<div class="time-moves">
+					<div class="time-timevalue">TIME<span id="sw-time" class="time-value">00s</span></div>
+					<div class="moves-movesvalue">MOVES <span class="moves-value">200</span></div>
+				</div>
+			</div>
+			<div class="options">
+				<button onclick="myFunctionLayout()" class="layout toggler options-options">
+					Layout<i id="spin-layout" class="toggler fas fa-chevron-down"></i>
+				</button>
+				<div
+					id="myDropdownLayout"
+					style="zoom: 0.66"
+					class="dropdown-content dropdown-content-layout dropdown-content-themeswitch"
+				>
+					<div class="theme layout-items">3 x 3</div>
+					<div class="theme layout-items">4 x 4</div>
+					<div class="theme layout-items">5 x 5</div>
+					<div class="theme layout-items">6 x 6</div>
+				</div>
+				<button onclick="myFunctionType()" class="type toggler options-options">
+					Type<i id="spin-type" class="toggler fas fa-chevron-down"></i>
+				</button>
+				<div id="myDropdownType" style="zoom: 0.66" class="dropdown-content dropdown-content-type dropdown-content-themeswitch">
+					<div class="theme type-items">Numbers</div>
+					<div class="theme type-items">Pictures</div>
+					<div class="theme type-items">Textures</div>
+					<div class="theme type-items">Gradients</div>
+				</div>
+				<button onclick="myFunctionMode()" class="game-mode toggler options-options">
+					Mode<i id="spin-mode" class="toggler fas fa-chevron-down"></i>
+				</button>
+				<div id="myDropdownMode" style="zoom: 0.66" class="dropdown-content dropdown-content-mode dropdown-content-themeswitch">
+					<div class="theme mode-items">Normal</div>
+					<div class="theme mode-items">Challenge</div>
+				</div>
+			</div>
+			<!--actual game-->
+			<div class="game">
+				<div class="grid">
+					<button>1</button>
+					<button>2</button>
+					<button>3</button>
+					<button>4</button>
+					<button>5</button>
+					<button>6</button>
+					<button>7</button>
+					<button>8</button>
+					<button>9</button>
+					<button>10</button>
+					<button>11</button>
+					<button>12</button>
+					<button>13</button>
+					<button>14</button>
+					<button>15</button>
+					<button></button>
+				</div>
+			</div>
+
+			<div class="pause-button"><input type="button" value="Pause" class="newgame" id="sw-go" disabled /></div>
+		</div>
+		<!--score board-->
+		<div class="scoreboard">
+			<h1 class="scoreboard-title">Scoreboard</h1>
+			<table class="scoreboard-table">
+				<tr>
+					<th class="user-serial"></th>
+					<th class="user-header">Player(username)</th>
+					<th class="user-time">Time</th>
+					<th class="user-moves">Moves</th>
+				</tr>
+				<tr>
+					<td class="user-serial-value">1</td>
+					<td class="user-header-value">Yashwant(yashwantkrishnapagoti)</td>
+					<td class="user-time-value">200s</td>
+					<td class="user-moves-value">401</td>
+				</tr>
+				<tr>
+					<td class="user-serial-value">2</td>
+					<td class="user-header-value">Yashwant(yashwantkrishnapagoti)</td>
+					<td class="user-time-value">200s</td>
+					<td class="user-moves-value">401</td>
+				</tr>
+				<tr>
+					<td class="user-serial-value">3</td>
+					<td class="user-header-value">Yashwant(yashwantkrishnapagoti)</td>
+					<td class="user-time-value">200s</td>
+					<td class="user-moves-value">401</td>
+				</tr>
+			</table>
+		</div>
+
+		<!--links for js-->
+		<script src="themetoggler.js"></script>
+		<script src="stopwatch.js"></script>
+		<script src="game.js"></script>
+	</body>
+</html>

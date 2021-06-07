@@ -1,0 +1,59 @@
+body {
+	background-color: #f0f4fb;
+}
+
+.dropbtn-themeswitch {
+	background-color: #dc244e;
+	color: white;
+}
+
+.dropdown-content-themeswitch {
+	background-color: #f1f1f1;
+	box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+	border-color: rgb(190, 190, 190);
+}
+
+.dropdown-content-themeswitch div {
+	color: black;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content-themeswitch div:hover {
+	background-color: #dc244e;
+	color: white;
+}
+
+/* Dropdown button on hover & focus */
+.dropbtn-themeswitch:hover,
+.dropbtn-themeswitch:focus {
+	background-color: #c5002e;
+}
+
+/* Heading */
+.heading,
+.scoreboard-title {
+	color: #dc244e;
+}
+
+.newgame,
+.time-moves,
+.options-options,
+.scoreboard-table tr th {
+	background-color: #dc244e;
+	color: white;
+}
+
+.newgame:hover,
+.newgame:active,
+.options-options:hover,
+.options-options:focus {
+	background-color: #c5002e;
+}
+
+.scoreboard-table tr td {
+	background-color: #efefef;
+}
+
+.scoreboard-table tr td.user-serial-value {
+	background-color: #ff3866;
+}

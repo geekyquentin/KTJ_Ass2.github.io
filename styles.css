@@ -1,0 +1,311 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+/* Dropdown Button */
+.dropbtn {
+	padding: 1rem;
+	min-width: 10rem;
+	font-size: 2rem;
+	font-weight: 900;
+	text-transform: uppercase;
+	margin: 2rem 2rem 0 0;
+	border: none;
+	cursor: pointer;
+}
+
+.dropbtn .fa-chevron-down {
+	margin: 0 0.2rem 0 2rem;
+	transition: 0.2s;
+}
+
+.spin-animation,
+.spin-animation-layout,
+.spin-animation-mode,
+.spin-animation-type {
+	transform: rotateX(-180deg);
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+	position: fixed;
+	left: 0;
+	top: 0;
+	margin-left: 2rem;
+	text-transform: uppercase;
+	font-size: 2rem;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+	display: none;
+	position: absolute;
+	margin: 0.4rem 2rem 0 0;
+	border: 1px solid;
+	border-bottom-left-radius: 1rem;
+	border-bottom-right-radius: 1rem;
+	text-align: center;
+	z-index: 1;
+}
+
+.dropdown-content-theme {
+	width: 13rem;
+}
+
+.dropdown-content-layout {
+	width: 14.6rem;
+	margin-top: 5.5rem;
+	transform: translateX(-12.3rem);
+}
+
+.dropdown-content-mode {
+	width: 13.1rem;
+	margin-top: 5.5rem;
+	transform: translateX(15.2rem);
+}
+
+.dropdown-content-type {
+	width: 13.7rem;
+	margin-top: 5.5rem;
+	transform: translateX(1.8rem);
+}
+
+/* Links inside the dropdown */
+.dropdown-content div {
+	padding: 1.2rem 1.6rem;
+	text-decoration: none;
+	display: block;
+}
+
+.theme {
+	cursor: pointer;
+	font-size: 2rem;
+	font-weight: 700;
+}
+
+#toggle-special {
+	border-bottom-left-radius: 0.9rem;
+	border-bottom-right-radius: 0.9rem;
+}
+
+/* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+.show {
+	display: block;
+}
+
+.dropbtn-themeswitch:hover,
+.dropbtn-themeswitch:focus {
+	box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+}
+
+/* heading */
+.heading {
+	display: absolute;
+	text-align: center;
+	text-transform: capitalize;
+	font-weight: 900;
+	font-size: 6.2rem;
+	margin-top: 3.5rem;
+	font-family: "Cookie", cursive;
+}
+
+.newgame-time-moves {
+	display: flex;
+	justify-content: space-between;
+	margin: 0.6rem auto;
+	width: 27.3rem;
+}
+
+.newgame,
+.time-moves {
+	padding: 0.1rem 0.7rem;
+	border-radius: 0.5rem;
+	border: none;
+	font-weight: 700;
+}
+
+.newgame {
+	font-size: 1.3rem;
+}
+
+.time-value,
+.moves-value {
+	text-align: right;
+	font-size: 1.2rem;
+	font-weight: 700;
+	margin-top: -0.4rem;
+	margin-bottom: 0.6rem;
+}
+
+.time-moves {
+	font-size: 0.8rem;
+	display: flex;
+	width: 11rem;
+}
+
+.time-timevalue,
+.moves-movesvalue {
+	flex: 50%;
+	display: flex;
+	flex-direction: column;
+	text-align: right;
+	font-size: 0.8rem;
+	font-weight: 600;
+	margin-top: 0.2rem;
+	margin-bottom: -0.4rem;
+}
+
+.moves-movesvalue {
+	margin-left: 3rem;
+	margin-right: 0.5rem;
+}
+
+.game-mode,
+.layout,
+.type {
+	padding: 0.7rem;
+}
+
+.options {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	margin: 1rem;
+}
+
+.options-options {
+	margin: 0;
+	border: none;
+	padding: 0.8rem 1.9rem;
+	font-weight: 700;
+	font-size: 1.3rem;
+	text-transform: uppercase;
+}
+
+.options-options .fa-chevron-down {
+	transition: 0.2s;
+	margin-left: 1rem;
+}
+
+.options .layout {
+	border-top-left-radius: 0.5rem;
+	border-bottom-left-radius: 0.5rem;
+	padding-left: 0.7rem;
+}
+
+.options .game-mode {
+	border-top-right-radius: 0.5rem;
+	border-bottom-right-radius: 0.5rem;
+	padding-right: 0.7rem;
+}
+
+.pause-button {
+	width: 100%;
+	text-align: center;
+	margin-top: 0.5rem;
+}
+
+.pause-button #sw-go {
+	width: 10rem;
+	padding: 0.4rem;
+}
+
+.game {
+	padding: 5px 15px;
+	border-radius: 5px;
+	zoom: 1.1;
+}
+
+.grid {
+	display: grid;
+	justify-content: center;
+	grid-template-columns: 80px 80px 80px 80px;
+	grid-template-rows: 80px 80px 80px 80px;
+}
+
+.grid button {
+	border-radius: 0.6rem;
+	margin: 0.2rem;
+	font-size: 2rem;
+	font-weight: 800;
+	border: none;
+}
+
+.scoreboard-title {
+	text-align: center;
+	margin-top: 4rem;
+	font-family: "Cookie", cursive;
+	font-weight: 700;
+	font-size: 4rem;
+}
+
+.scoreboard-table {
+	margin: 0rem auto;
+	border-radius: 0.5rem;
+	width: 35rem;
+}
+
+.scoreboard-table tr th {
+	padding: 0.6rem 1rem;
+	border-bottom: 0.5px solid white;
+	font-size: 1.1rem;
+}
+
+.user-serial {
+	border-top-left-radius: 0.5rem;
+}
+
+.user-serial,
+.user-header,
+.user-time,
+.user-serial-value,
+.user-header-value,
+.user-time-value {
+	border-right: 0.5px solid white;
+}
+
+.user-moves {
+	border-top-right-radius: 0.5rem;
+}
+
+.scoreboard-table tr td {
+	padding: 0.4rem 1rem;
+}
+
+@media only screen and (max-width: 521px) {
+	.dropbtn {
+		zoom: 0.8;
+	}
+	.heading {
+		font-size: 13vw;
+	}
+	.newgame-time-moves {
+		width: 27.2rem;
+		transform: scale(0.8);
+		margin: auto;
+	}
+	.pause-button,
+	.options {
+		zoom: 0.8;
+	}
+	.grid {
+		zoom: 0.8;
+	}
+}
+
+@media only screen and (max-width: 600px) {
+	.scoreboard {
+		zoom: 0.8;
+	}
+}
+/* h1 {
+	font-size: 5.9vw;
+}
+h2 {
+	font-size: 3vh;
+}
+p {
+	font-size: 2vmin;
+} */

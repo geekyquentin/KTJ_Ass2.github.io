@@ -1,0 +1,61 @@
+body.theme-purple {
+	background-color: #57407c;
+}
+
+.theme-purple .dropbtn-themeswitch {
+	background-color: rgb(61, 41, 99);
+	color: white;
+}
+
+.theme-purple .dropdown-content-themeswitch {
+	background-color: rgb(61, 41, 99);
+	box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+	border-color: rgb(111, 74, 179);
+}
+
+.theme-purple .dropdown-content-themeswitch div {
+	color: #c9d1d9;
+}
+
+/* Change color of dropdown links on hover */
+.theme-purple .dropdown-content-themeswitch div:hover {
+	background-color: rgb(49, 33, 80);
+}
+
+/* Dropdown button on hover & focus */
+.theme-purple .dropbtn-themeswitch:hover,
+.theme-purple .dropbtn-themeswitch:focus {
+	background-color: rgb(49, 33, 80);
+}
+
+.theme-purple .heading,
+.theme-purple .scoreboard-title {
+	color: white;
+}
+
+.theme-purple .newgame,
+.theme-purple .time-moves,
+.theme-purple .options-options,
+.theme-purple .scoreboard-table tr th {
+	background-color: rgb(61, 41, 99);
+	color: white;
+}
+
+.theme-purple .newgame:hover,
+.theme-purple .newgame:active,
+.theme-purple .options-options:hover,
+.theme-purple .options-options:focus {
+	background-color: rgb(49, 33, 80);
+}
+
+.theme-purple .scoreboard-table tr td {
+	background-color: #5d4585;
+}
+
+.theme-purple .scoreboard-table tr td.user-serial-value {
+	background-color: rgb(77, 53, 122);
+}
+
+.theme-purple .scoreboard-table tr td {
+	color: white;
+}
