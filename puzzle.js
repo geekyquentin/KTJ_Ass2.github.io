@@ -113,3 +113,20 @@ function moveTile(tile, col, row) {
 makeField();
 makeTiles();
 makeTilesBg();
+
+$(document).ready(function () {
+	$(".my-tile").disableSelection();
+});
+$.fn.extend({
+	disableSelection: function () {
+		this.each(function () {
+			this.onselectstart = function () {
+				return false;
+			};
+			this.unselectable = "on";
+			$(this).css("-moz-user-select", "none");
+			$(this).css("-webkit-user-select", "none");
+		});
+		return this;
+	},
+});
