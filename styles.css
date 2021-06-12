@@ -300,14 +300,14 @@
 	color: #a048ab;
 	cursor: pointer;
 	position: absolute;
-	z-index: 1;
+	z-index: -1;
 }
 
 .my-tile-bg {
 	border-radius: 10px;
 	background-color: rgb(255, 255, 0);
 	position: absolute;
-	z-index: 0;
+	z-index: -2;
 }
 
 @media only screen and (max-width: 521px) {
