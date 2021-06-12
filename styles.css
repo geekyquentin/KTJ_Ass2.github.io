@@ -4,6 +4,13 @@
 	box-sizing: border-box;
 }
 
+.fa-check {
+	display: none;
+	position: relative;
+	float: right;
+	margin-top: 0.5rem;
+}
+
 /* Dropdown Button */
 .dropbtn {
 	padding: 1rem;
@@ -45,7 +52,7 @@
 	border: 1px solid;
 	border-bottom-left-radius: 1rem;
 	border-bottom-right-radius: 1rem;
-	text-align: center;
+	text-align: left;
 	z-index: 1;
 }
 
@@ -53,22 +60,25 @@
 	width: 13rem;
 }
 
+.dropdown-content-layout,
+.dropdown-content-mode,
+.dropdown-content-type {
+	margin-top: 6.2rem;
+}
+
 .dropdown-content-layout {
-	width: 14.6rem;
-	margin-top: 5.5rem;
-	transform: translateX(-12.3rem);
+	width: 14.4rem;
+	transform: translateX(-13.6rem);
 }
 
 .dropdown-content-mode {
-	width: 13.1rem;
-	margin-top: 5.5rem;
-	transform: translateX(15.2rem);
+	width: 14.4rem;
+	transform: translateX(15.6rem);
 }
 
 .dropdown-content-type {
-	width: 13.7rem;
-	margin-top: 5.5rem;
-	transform: translateX(1.8rem);
+	width: 14.4rem;
+	transform: translateX(1rem);
 }
 
 /* Links inside the dropdown */
@@ -81,7 +91,7 @@
 .theme {
 	cursor: pointer;
 	font-size: 2rem;
-	font-weight: 700;
+	font-weight: 600;
 }
 
 #toggle-special {
@@ -172,13 +182,14 @@
 	flex-direction: row;
 	justify-content: center;
 	margin: 1rem;
-	zoom: 0.79;
+	zoom: 0.75;
 }
 
 .options-options {
 	margin: 0;
 	border: none;
-	padding: 0.8rem 1.9rem;
+	padding: 1rem 0;
+	width: 9.6rem;
 	font-weight: 700;
 	font-size: 1.3rem;
 	text-transform: uppercase;
@@ -187,6 +198,7 @@
 .options-options .fa-chevron-down {
 	transition: 0.2s;
 	margin-left: 1rem;
+	margin-right: 0.5rem;
 }
 
 .options .layout {
@@ -274,6 +286,30 @@
 	padding: 0.4rem 1rem;
 }
 
+.my-field {
+	margin: 0 auto;
+	position: relative;
+}
+
+.my-tile {
+	border-radius: 10px;
+	background-color: #ffc;
+	vertical-align: middle;
+	text-align: center;
+	font-weight: bold;
+	color: #a048ab;
+	cursor: pointer;
+	position: absolute;
+	z-index: 1;
+}
+
+.my-tile-bg {
+	border-radius: 10px;
+	background-color: rgb(255, 255, 0);
+	position: absolute;
+	z-index: 0;
+}
+
 @media only screen and (max-width: 521px) {
 	.dropbtn {
 		zoom: 0.8;
@@ -289,11 +325,16 @@
 		transform: scale(0.8);
 		margin: auto;
 	}
-	.pause-button,
-	.options {
+	.pause-button {
 		zoom: 0.8;
 	}
-	.grid {
+	.options {
+		zoom: 0.75;
+	}
+	.my-field {
+		zoom: 0.8;
+	}
+	.scoreboard {
 		zoom: 0.8;
 	}
 }
@@ -303,17 +344,11 @@
 		width: 23rem;
 	}
 	.options {
-		zoom: 0.68;
+		zoom: 0.6;
 	}
 }
 
 @media only screen and (max-width: 600px) {
-	.scoreboard {
-		zoom: 0.8;
-	}
-}
-
-@media only screen and (max-width: 521px) {
 	.scoreboard {
 		zoom: 0.8;
 	}

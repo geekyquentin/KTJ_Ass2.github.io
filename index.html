@@ -39,6 +39,7 @@
 
 		<!--links for icons-->
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+		<link rel="stylesheet" href="https://proicons.netlify.app/css/icons.min.css" />
 
 		<!--links for fonts-->
 		<link rel="preconnect" href="https://fonts.gstatic.com" />
@@ -79,49 +80,31 @@
 					style="zoom: 0.66"
 					class="dropdown-content dropdown-content-layout dropdown-content-themeswitch"
 				>
-					<div class="theme layout-items">3 x 3</div>
-					<div class="theme layout-items">4 x 4</div>
-					<div class="theme layout-items">5 x 5</div>
-					<div class="theme layout-items">6 x 6</div>
+					<div class="theme layout-items">3 x 3<i class="fal fa-check"></i></div>
+					<div class="theme layout-items">4 x 4<i class="fal fa-check"></i></div>
+					<div class="theme layout-items">5 x 5<i class="fal fa-check"></i></div>
+					<div class="theme layout-items">6 x 6<i class="fal fa-check"></i></div>
 				</div>
 				<button onclick="myFunctionType()" class="type toggler options-options">
 					Type<i id="spin-type" class="toggler fas fa-chevron-down"></i>
 				</button>
 				<div id="myDropdownType" style="zoom: 0.66" class="dropdown-content dropdown-content-type dropdown-content-themeswitch">
-					<div class="theme type-items">Numbers</div>
-					<div class="theme type-items">Pictures</div>
-					<div class="theme type-items">Textures</div>
-					<div class="theme type-items">Gradients</div>
+					<div class="theme type-items">Numbers<i class="fal fa-check"></i></div>
+					<div class="theme type-items">Pictures<i class="fal fa-check"></i></div>
+					<div class="theme type-items">Textures<i class="fal fa-check"></i></div>
+					<div class="theme type-items">Gradients<i class="fal fa-check"></i></div>
 				</div>
 				<button onclick="myFunctionMode()" class="game-mode toggler options-options">
 					Mode<i id="spin-mode" class="toggler fas fa-chevron-down"></i>
 				</button>
 				<div id="myDropdownMode" style="zoom: 0.66" class="dropdown-content dropdown-content-mode dropdown-content-themeswitch">
-					<div class="theme mode-items">Normal</div>
-					<div class="theme mode-items">Challenge</div>
+					<div class="theme mode-items">Normal<i class="fal fa-check"></i></div>
+					<!-- <div class="theme mode-items">Challenge<i class="fal fa-check"></i></div> -->
 				</div>
 			</div>
 			<!--actual game-->
-			<div class="game">
-				<div class="grid">
-					<button>1</button>
-					<button>2</button>
-					<button>3</button>
-					<button>4</button>
-					<button>5</button>
-					<button>6</button>
-					<button>7</button>
-					<button>8</button>
-					<button>9</button>
-					<button>10</button>
-					<button>11</button>
-					<button>12</button>
-					<button>13</button>
-					<button>14</button>
-					<button>15</button>
-					<button></button>
-				</div>
-			</div>
+			<h1></h1>
+			<script src="puzzle.js"></script>
 
 			<div class="pause-button"><input type="button" value="Pause" class="newgame" id="sw-go" disabled /></div>
 		</div>
@@ -159,6 +142,5 @@
 		<!--links for js-->
 		<script src="themetoggler.js"></script>
 		<script src="stopwatch.js"></script>
-		<script src="game.js"></script>
 	</body>
 </html>
