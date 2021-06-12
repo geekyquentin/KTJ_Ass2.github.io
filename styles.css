@@ -5,7 +5,7 @@
 }
 
 .fa-check {
-	display: none;
+	visibility: hidden;
 	position: relative;
 	float: right;
 	margin-top: 0.5rem;
@@ -53,7 +53,7 @@
 	border-bottom-left-radius: 1rem;
 	border-bottom-right-radius: 1rem;
 	text-align: left;
-	z-index: 1;
+	z-index: 2;
 }
 
 .dropdown-content-theme {
@@ -293,21 +293,18 @@
 
 .my-tile {
 	border-radius: 10px;
-	background-color: #ffc;
 	vertical-align: middle;
 	text-align: center;
 	font-weight: bold;
-	color: #a048ab;
 	cursor: pointer;
 	position: absolute;
-	z-index: -1;
+	z-index: 1;
 }
 
 .my-tile-bg {
 	border-radius: 10px;
-	background-color: rgb(255, 255, 0);
 	position: absolute;
-	z-index: -2;
+	z-index: 0;
 }
 
 @media only screen and (max-width: 521px) {

@@ -61,3 +61,12 @@ body.theme-special {
 .theme-special .scoreboard-table tr td {
 	color: white;
 }
+
+.theme-dark .my-tile {
+	background-color: #ffc;
+	color: #a048ab;
+}
+
+.theme-dark .my-tile-bg {
+	background-color: #ffd43b;
+}

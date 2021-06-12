@@ -59,3 +59,12 @@ body.theme-purple {
 .theme-purple .scoreboard-table tr td {
 	color: white;
 }
+
+.theme-dark .my-tile {
+	background-color: #ffc;
+	color: #a048ab;
+}
+
+.theme-dark .my-tile-bg {
+	background-color: rgb(61, 41, 99);
+}
