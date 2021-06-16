@@ -11,6 +11,10 @@
 	margin-top: 0.5rem;
 }
 
+.fa-check-show {
+	visibility: visible;
+}
+
 /* Dropdown Button */
 .dropbtn {
 	padding: 1rem;
@@ -91,10 +95,13 @@
 .theme {
 	cursor: pointer;
 	font-size: 2rem;
-	font-weight: 600;
+	font-weight: 700;
 }
 
-#toggle-special {
+#toggle-special,
+#toggle-6,
+#toggle-gra,
+#toggle-nor {
 	border-bottom-left-radius: 0.9rem;
 	border-bottom-right-radius: 0.9rem;
 }
@@ -116,7 +123,7 @@
 	text-transform: capitalize;
 	font-weight: 900;
 	font-size: 6.2rem;
-	margin-top: 3.5rem;
+	margin-top: 2rem;
 	font-family: "Cookie", cursive;
 }
 

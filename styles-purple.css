@@ -60,11 +60,11 @@ body.theme-purple {
 	color: white;
 }
 
-.theme-dark .my-tile {
+.theme-purple .my-tile {
 	background-color: #ffc;
 	color: #a048ab;
 }
 
-.theme-dark .my-tile-bg {
+.theme-purple .my-tile-bg {
 	background-color: rgb(61, 41, 99);
 }

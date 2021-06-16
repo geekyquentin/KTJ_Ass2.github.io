@@ -61,11 +61,11 @@ body.theme-dark2 {
 	color: white;
 }
 
-.theme-dark .my-tile {
+.theme-dark2 .my-tile {
 	background-color: #ffc;
 	color: #a048ab;
 }
 
-.theme-dark .my-tile-bg {
+.theme-dark2 .my-tile-bg {
 	background-color: #1c2128;
 }

@@ -62,11 +62,11 @@ body.theme-special {
 	color: white;
 }
 
-.theme-dark .my-tile {
+.theme-special .my-tile {
 	background-color: #ffc;
 	color: #a048ab;
 }
 
-.theme-dark .my-tile-bg {
+.theme-special .my-tile-bg {
 	background-color: #ffd43b;
 }

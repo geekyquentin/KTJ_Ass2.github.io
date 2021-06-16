@@ -12,7 +12,6 @@ var sw = {
 		// (A2) ENABLE BUTTON CONTROLS
 		sw.erst.addEventListener("click", sw.reset);
 		sw.erst.disabled = false;
-		sw.ego.addEventListener("click", sw.start);
 		sw.ego.disabled = false;
 	},
 
@@ -35,7 +34,6 @@ var sw = {
 	// (C) START!
 	start: function () {
 		sw.timer = setInterval(sw.tick, 1000);
-		sw.ego.value = "Stop";
 		sw.ego.removeEventListener("click", sw.start);
 		sw.ego.addEventListener("click", sw.stop);
 	},
@@ -44,7 +42,6 @@ var sw = {
 	stop: function () {
 		clearInterval(sw.timer);
 		sw.timer = null;
-		sw.ego.value = "Start";
 		sw.ego.removeEventListener("click", sw.stop);
 		sw.ego.addEventListener("click", sw.start);
 	},

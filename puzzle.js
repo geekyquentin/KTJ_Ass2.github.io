@@ -1,9 +1,24 @@
 var field = $("<div></div>");
 
 var size = 4;
+document.getElementById("toggle-3").addEventListener("click", function () {
+	console.log("3 is clicked");
+	size = 3;
+});
+document.getElementById("toggle-4").addEventListener("click", function () {
+	size = 4;
+});
+document.getElementById("toggle-5").addEventListener("click", function () {
+	size = 5;
+});
+document.getElementById("toggle-6").addEventListener("click", function () {
+	size = 6;
+});
+
 var width = 350;
 var height = width;
 var spacing = 10 - size;
+var count = 0;
 
 var data = [];
 
@@ -94,12 +109,36 @@ function moveTile(tile, col, row) {
 	var dx = 0;
 	var dy = 0;
 	if (col > 0 && data[row][col - 1] == 0) {
+		count++;
+		if (count == 1) {
+			sw.start();
+		}
+		if (count < 10) document.getElementById("moves-value").innerHTML = "0" + count;
+		else document.getElementById("moves-value").innerHTML = count;
 		dx = -1;
 	} else if (col < size - 1 && data[row][col + 1] == 0) {
+		count++;
+		if (count == 1) {
+			sw.start();
+		}
+		if (count < 10) document.getElementById("moves-value").innerHTML = "0" + count;
+		else document.getElementById("moves-value").innerHTML = count;
 		dx = 1;
 	} else if (row > 0 && data[row - 1][col] == 0) {
+		count++;
+		if (count == 1) {
+			sw.start();
+		}
+		if (count < 10) document.getElementById("moves-value").innerHTML = "0" + count;
+		else document.getElementById("moves-value").innerHTML = count;
 		dy = -1;
 	} else if (row < size - 1 && data[row + 1][col] == 0) {
+		count++;
+		if (count == 1) {
+			sw.start();
+		}
+		if (count < 10) document.getElementById("moves-value").innerHTML = "0" + count;
+		else document.getElementById("moves-value").innerHTML = count;
 		dy = 1;
 	} else {
 		return;
@@ -109,6 +148,11 @@ function moveTile(tile, col, row) {
 	data[row][col] = 0;
 	positionTile(tile, col + dx, row + dy, true);
 }
+
+document.getElementById("sw-rst").addEventListener("click", function () {
+	count = "00";
+	document.getElementById("moves-value").innerHTML = count;
+});
 
 makeField();
 makeTiles();
