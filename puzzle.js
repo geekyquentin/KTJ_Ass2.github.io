@@ -1,4 +1,15 @@
+var flag = 0;
 selectlayout(4);
+
+function pauseClick() {
+	if (flag === 0) {
+		flag = 1;
+		console.log("value of flag = 1");
+	} else if (flag === 1) {
+		flag = 0;
+		console.log("value of flag = 0");
+	}
+}
 
 function selectlayout(Size) {
 	var field = $('<div id="gamegrid"></div>');
@@ -58,7 +69,9 @@ function selectlayout(Size) {
 			data[row].push(value);
 		}
 		data[size - 1].push(0);
-		$(".my-tile").click(tileClicked);
+		if (flag === 0) {
+			$(".my-tile").click(tileClicked);
+		}
 	}
 
 	function positionTile(tile, col, row, smooth) {
@@ -176,16 +189,6 @@ function selectlayout(Size) {
 // 	}
 // });
 
-document.getElementById("sw-rst").addEventListener("click", function () {
-	var elements = document.getElementsByClassName("options-options");
-	for (var i = 0; i < elements.length; i++) {
-		elements[i].disabled = false;
-	}
-	document.getElementById("sw-go").disabled = true;
-	count = "00";
-	document.getElementById("moves-value").innerHTML = count;
-});
-
 $(document).ready(function () {
 	$(".my-tile").disableSelection();
 });
@@ -201,4 +204,14 @@ $.fn.extend({
 		});
 		return this;
 	},
+});
+
+document.getElementById("sw-rst").addEventListener("click", function () {
+	var elements = document.getElementsByClassName("options-options");
+	for (var i = 0; i < elements.length; i++) {
+		elements[i].disabled = false;
+	}
+	document.getElementById("sw-go").disabled = true;
+	count = "00";
+	document.getElementById("moves-value").innerHTML = count;
 });

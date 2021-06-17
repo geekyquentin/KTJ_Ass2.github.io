@@ -96,11 +96,19 @@ function myFunctionLayout() {
 	document.getElementById("spin-layout").classList.toggle("spin-animation-layout");
 }
 
+function removePrevious() {
+	var elems = document.getElementsByClassName("my-field");
+	for (var i = 0; i < elems.length; i += 1) {
+		elems[i].style.display = "none";
+	}
+}
+
 document.getElementById("toggle-3").addEventListener("click", function () {
 	document.body.classList.add("display-tick-t3");
 	document.body.classList.remove("display-tick-t4");
 	document.body.classList.remove("display-tick-t5");
 	document.body.classList.remove("display-tick-t6");
+	removePrevious();
 	selectlayout(3);
 });
 document.getElementById("toggle-4").addEventListener("click", function () {
@@ -108,6 +116,7 @@ document.getElementById("toggle-4").addEventListener("click", function () {
 	document.body.classList.remove("display-tick-t3");
 	document.body.classList.remove("display-tick-t5");
 	document.body.classList.remove("display-tick-t6");
+	removePrevious();
 	selectlayout(4);
 });
 document.getElementById("toggle-5").addEventListener("click", function () {
@@ -115,6 +124,7 @@ document.getElementById("toggle-5").addEventListener("click", function () {
 	document.body.classList.remove("display-tick-t4");
 	document.body.classList.remove("display-tick-t3");
 	document.body.classList.remove("display-tick-t6");
+	removePrevious();
 	selectlayout(5);
 });
 document.getElementById("toggle-6").addEventListener("click", function () {
@@ -122,6 +132,7 @@ document.getElementById("toggle-6").addEventListener("click", function () {
 	document.body.classList.remove("display-tick-t4");
 	document.body.classList.remove("display-tick-t5");
 	document.body.classList.remove("display-tick-t3");
+	removePrevious();
 	selectlayout(6);
 });
 
