@@ -214,6 +214,14 @@
 	text-transform: uppercase;
 }
 
+.options-options:disabled {
+	cursor: not-allowed;
+}
+
+.p-btn:disabled {
+	cursor: not-allowed;
+}
+
 .options-options .fa-chevron-down {
 	transition: 0.2s;
 	margin-left: 1rem;

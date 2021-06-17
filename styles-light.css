@@ -43,6 +43,11 @@ body {
 	color: white;
 }
 
+.options-options:disabled,
+.options-options:disabled:hover {
+	background-color: #dc244e;
+}
+
 .newgame:hover,
 .newgame:active,
 .options-options:hover,
