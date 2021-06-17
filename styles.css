@@ -10,8 +10,20 @@
 	float: right;
 	margin-top: 0.5rem;
 }
-
-.fa-check-show {
+.display-tick-light .li,
+.display-tick-dark .da,
+.display-tick-dark2 .da2,
+.display-tick-purple .pu,
+.display-tick-special .sp,
+.display-tick-t3 .t3,
+.display-tick-t4 .t4,
+.display-tick-t5 .t5,
+.display-tick-t6 .t6,
+.display-tick-num .num,
+.display-tick-tex .tex,
+.display-tick-pic .pic,
+.display-tick-gra .gra,
+.display-tick-nor .nor {
 	visibility: visible;
 }
 
