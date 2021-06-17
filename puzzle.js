@@ -1,4 +1,4 @@
-var flag = 0;
+flag = 0;
 selectlayout(4);
 
 function pauseClick() {
@@ -69,9 +69,8 @@ function selectlayout(Size) {
 			data[row].push(value);
 		}
 		data[size - 1].push(0);
-		if (flag === 0) {
-			$(".my-tile").click(tileClicked);
-		}
+
+		$(".my-tile").click(tileClicked);
 	}
 
 	function positionTile(tile, col, row, smooth) {
@@ -92,18 +91,20 @@ function selectlayout(Size) {
 	}
 
 	function tileClicked(event) {
-		var tile = $(event.currentTarget);
-		var value = parseInt(tile.text());
-		var x, y;
+		if (flag === 0) {
+			var tile = $(event.currentTarget);
+			var value = parseInt(tile.text());
+			var x, y;
 
-		outer: for (y = 0; y < size; y++) {
-			for (x = 0; x < size; x++) {
-				if (data[y][x] == value) {
-					break outer;
+			outer: for (y = 0; y < size; y++) {
+				for (x = 0; x < size; x++) {
+					if (data[y][x] == value) {
+						break outer;
+					}
 				}
 			}
+			moveTile(tile, x, y);
 		}
-		moveTile(tile, x, y);
 	}
 
 	function moveTile(tile, col, row) {
