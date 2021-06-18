@@ -27,7 +27,7 @@ function selectlayout(Size) {
 		field.height(height);
 	}
 
-	$("h1").parent().append(field);
+	$("#the-real-game").append(field);
 
 	function makeTilesBg() {
 		var tilesN = size * size - 1;
@@ -58,6 +58,7 @@ function selectlayout(Size) {
 			var value = i + 1;
 			var tile = $("<div>" + value + "</div>");
 			tile.addClass("my-tile");
+			disabletouch();
 			field.append(tile);
 			tile.width(tileW).height(tileH);
 			tile.css("font-size", Math.floor((tileH * 1.4) / 3) + "px");
@@ -189,23 +190,24 @@ function selectlayout(Size) {
 // 		}
 // 	}
 // });
-
-$(document).ready(function () {
-	$(".my-tile").disableSelection();
-});
-$.fn.extend({
-	disableSelection: function () {
-		this.each(function () {
-			this.onselectstart = function () {
-				return false;
-			};
-			this.unselectable = "on";
-			$(this).css("-moz-user-select", "none");
-			$(this).css("-webkit-user-select", "none");
-		});
-		return this;
-	},
-});
+function disabletouch() {
+	$(document).ready(function () {
+		$(".my-tile").disableSelection();
+	});
+	$.fn.extend({
+		disableSelection: function () {
+			this.each(function () {
+				this.onselectstart = function () {
+					return false;
+				};
+				this.unselectable = "on";
+				$(this).css("-moz-user-select", "none");
+				$(this).css("-webkit-user-select", "none");
+			});
+			return this;
+		},
+	});
+}
 
 document.getElementById("sw-rst").addEventListener("click", function () {
 	var elements = document.getElementsByClassName("options-options");
