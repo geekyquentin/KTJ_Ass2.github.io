@@ -1,4 +1,6 @@
-flag = 0;
+var flag = 0;
+var youWin = 0;
+var Size = 4;
 selectlayout(4);
 
 function pauseClick() {
@@ -50,28 +52,55 @@ function selectlayout(Size) {
 		var tilesN = size * size - 1;
 		var tileW = (width - spacing * (size + 1)) / size;
 		var tileH = (height - spacing * (size + 1)) / size;
+
 		for (var j = 0; j < size; j++) {
 			data.push([]);
 		}
 
-		for (var i = 0; i < tilesN; i++) {
-			var value = i + 1;
-			var tile = $("<div>" + value + "</div>");
-			tile.addClass("my-tile");
-			disabletouch();
-			field.append(tile);
-			tile.width(tileW).height(tileH);
-			tile.css("font-size", Math.floor((tileH * 1.4) / 3) + "px");
-			tile.css("line-height", tileH + "px");
-			var col = i % size;
-			var row = Math.floor(i / size);
-
-			positionTile(tile, col, row);
-			data[row].push(value);
+		var dData = [];
+		for (var i = 0; i <= tilesN; i++) {
+			dData.push(i);
 		}
-		data[size - 1].push(0);
+
+		for (var i = tilesN; i > 0; i--) {
+			const j = Math.floor(Math.random() * i);
+			const temp = dData[i];
+			dData[i] = dData[j];
+			dData[j] = temp;
+		}
+
+		var m = 0;
+		for (var i = 0; i < size; i++) {
+			for (var j = 0; j < size; j++) {
+				data[i][j] = dData[m++];
+			}
+		}
+		console.log(data);
+
+		for (var i = 0; i < size; i++) {
+			for (var j = 0; j < size; j++) {
+				console.log("x: " + i + " y: " + j + ", value of data[i][j] is " + data[i][j]);
+				var tile = $("<div>" + data[i][j] + "</div>");
+				tile.addClass("my-tile");
+				disabletouch();
+				field.append(tile);
+				tile.width(tileW).height(tileH);
+				tile.css("font-size", Math.floor((tileH * 1.4) / 3) + "px");
+				tile.css("line-height", tileH + "px");
+				if (data[i][j] === 0) {
+					tile.removeClass("my-tile");
+					tile.css("display", "none");
+				}
+				console.log("appending at x = " + i + " and y = " + j);
+				var col = j;
+				var row = i;
+
+				positionTile(tile, col, row);
+			}
+		}
 
 		$(".my-tile").click(tileClicked);
+		$(".my-tile").click(checkWin);
 	}
 
 	function positionTile(tile, col, row, smooth) {
@@ -91,6 +120,28 @@ function selectlayout(Size) {
 		}
 	}
 
+	function checkWin() {
+		var m = 0;
+		outeside: for (var i = 0; i < size; i++) {
+			for (var j = 0; j < size && m <= size * size - 2; j++) {
+				m++;
+				console.log(m);
+				if (data[i][j] == m) {
+					youWin = 1;
+				} else {
+					youWin = 0;
+					break outeside;
+				}
+			}
+		}
+		console.log(data);
+		if (youWin === 1) {
+			alert("You win");
+		} else {
+			console.log("Not yet win vro");
+		}
+	}
+
 	function tileClicked(event) {
 		if (flag === 0) {
 			var tile = $(event.currentTarget);
@@ -100,6 +151,8 @@ function selectlayout(Size) {
 			outer: for (y = 0; y < size; y++) {
 				for (x = 0; x < size; x++) {
 					if (data[y][x] == value) {
+						console.log("value: " + data[y][x] + " matched");
+						console.log("y: " + y + " x: " + x);
 						break outer;
 					}
 				}
@@ -111,7 +164,7 @@ function selectlayout(Size) {
 	function moveTile(tile, col, row) {
 		var dx = 0;
 		var dy = 0;
-		if (col > 0 && data[row][col - 1] == 0) {
+		if (col > 0 && data[row][col - 1] === 0) {
 			count++;
 			if (count == 1) {
 				sw.start();
@@ -124,7 +177,8 @@ function selectlayout(Size) {
 			if (count < 10) document.getElementById("moves-value").innerHTML = "0" + count;
 			else document.getElementById("moves-value").innerHTML = count;
 			dx = -1;
-		} else if (col < size - 1 && data[row][col + 1] == 0) {
+			console.log("it moves left");
+		} else if (col < size - 1 && data[row][col + 1] === 0) {
 			count++;
 			if (count == 1) {
 				sw.start();
@@ -137,7 +191,8 @@ function selectlayout(Size) {
 			if (count < 10) document.getElementById("moves-value").innerHTML = "0" + count;
 			else document.getElementById("moves-value").innerHTML = count;
 			dx = 1;
-		} else if (row > 0 && data[row - 1][col] == 0) {
+			console.log("it moves right");
+		} else if (row > 0 && data[row - 1][col] === 0) {
 			count++;
 			if (count == 1) {
 				sw.start();
@@ -150,7 +205,8 @@ function selectlayout(Size) {
 			if (count < 10) document.getElementById("moves-value").innerHTML = "0" + count;
 			else document.getElementById("moves-value").innerHTML = count;
 			dy = -1;
-		} else if (row < size - 1 && data[row + 1][col] == 0) {
+			console.log("it moves up");
+		} else if (row < size - 1 && data[row + 1][col] === 0) {
 			count++;
 			if (count == 1) {
 				sw.start();
@@ -163,6 +219,7 @@ function selectlayout(Size) {
 			if (count < 10) document.getElementById("moves-value").innerHTML = "0" + count;
 			else document.getElementById("moves-value").innerHTML = count;
 			dy = 1;
+			console.log("it moves down");
 		} else {
 			return;
 		}
@@ -210,6 +267,8 @@ function disabletouch() {
 }
 
 document.getElementById("sw-rst").addEventListener("click", function () {
+	removePrevious();
+	selectlayout(Size);
 	var elements = document.getElementsByClassName("options-options");
 	for (var i = 0; i < elements.length; i++) {
 		elements[i].disabled = false;

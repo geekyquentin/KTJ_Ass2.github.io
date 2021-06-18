@@ -109,6 +109,7 @@ document.getElementById("toggle-3").addEventListener("click", function () {
 	document.body.classList.remove("display-tick-t5");
 	document.body.classList.remove("display-tick-t6");
 	removePrevious();
+	Size = 3;
 	selectlayout(3);
 });
 document.getElementById("toggle-4").addEventListener("click", function () {
@@ -117,6 +118,7 @@ document.getElementById("toggle-4").addEventListener("click", function () {
 	document.body.classList.remove("display-tick-t5");
 	document.body.classList.remove("display-tick-t6");
 	removePrevious();
+	Size = 4;
 	selectlayout(4);
 });
 document.getElementById("toggle-5").addEventListener("click", function () {
@@ -125,6 +127,7 @@ document.getElementById("toggle-5").addEventListener("click", function () {
 	document.body.classList.remove("display-tick-t3");
 	document.body.classList.remove("display-tick-t6");
 	removePrevious();
+	Size = 5;
 	selectlayout(5);
 });
 document.getElementById("toggle-6").addEventListener("click", function () {
@@ -133,6 +136,7 @@ document.getElementById("toggle-6").addEventListener("click", function () {
 	document.body.classList.remove("display-tick-t5");
 	document.body.classList.remove("display-tick-t3");
 	removePrevious();
+	Size = 6;
 	selectlayout(6);
 });
 
