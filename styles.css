@@ -4,6 +4,29 @@
 	box-sizing: border-box;
 }
 
+.pop-up-win {
+	display: none;
+	position: fixed;
+	top: 20%;
+	left: 50%;
+	transform: translate(-50%, 0);
+	background-color: aqua;
+	padding: 1rem;
+	border-radius: 1rem;
+	text-align: center;
+	z-index: 5;
+}
+
+.display-popup .pop-up-win {
+	display: block;
+}
+
+.new-game-popup-btn {
+	padding: 0.3rem 1.5rem;
+	border: none;
+	border-radius: 0.4rem;
+}
+
 .fa-check {
 	visibility: hidden;
 	position: relative;

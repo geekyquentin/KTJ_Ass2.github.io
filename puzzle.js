@@ -136,7 +136,11 @@ function selectlayout(Size) {
 		}
 		console.log(data);
 		if (youWin === 1) {
-			alert("You win");
+			document.body.classList.add("display-popup");
+			var str = sw.etime.innerHTML;
+			var newStr = str.substring(0, str.length - 1);
+			document.getElementById("final-moves-value").innerHTML = newStr;
+			sw.stop();
 		} else {
 			console.log("Not yet win vro");
 		}
@@ -276,4 +280,18 @@ document.getElementById("sw-rst").addEventListener("click", function () {
 	document.getElementById("sw-go").disabled = true;
 	count = "00";
 	document.getElementById("moves-value").innerHTML = count;
+});
+
+document.getElementById("popup-newgame").addEventListener("click", function () {
+	removePrevious();
+	selectlayout(Size);
+	var elements = document.getElementsByClassName("options-options");
+	for (var i = 0; i < elements.length; i++) {
+		elements[i].disabled = false;
+	}
+	document.getElementById("sw-go").disabled = true;
+	count = "00";
+	document.getElementById("moves-value").innerHTML = count;
+	document.body.classList.remove("display-popup");
+	sw.reset();
 });

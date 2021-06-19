@@ -184,6 +184,7 @@ window.addEventListener("load", function () {
 	this.document.body.classList.add("display-tick-nor");
 	sw.init();
 	this.document.getElementById("sw-go").disabled = true;
+	document.body.classList.remove("display-popup");
 });
 
 // Close the dropdown menu if the user clicks outside of it
