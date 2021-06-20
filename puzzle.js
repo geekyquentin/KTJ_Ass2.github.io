@@ -14,6 +14,12 @@ function pauseClick() {
 	}
 }
 
+function displayPopup() {
+	setTimeout(function () {
+		window.location.animate = document.body.classList.add("display-popup");
+	}, 400);
+}
+
 function selectlayout(Size) {
 	var field = $('<div id="gamegrid"></div>');
 	var size = Size;
@@ -70,12 +76,33 @@ function selectlayout(Size) {
 			dData[j] = temp;
 		}
 
+		// function getInvCount(puzzle) {
+		// 	var inv_count = 0;
+		// 	for (var i = 0; i < size * size - 1; i++) {
+		// 		for (var j = 0; j < size * size - 1; j++) {
+		// 			if (puzzle[j] && puzzle[i] && puzzle[i] > puzzle[j]) {
+		// 				inv_count++;
+		// 			}
+		// 		}
+		// 	}
+		// 	return inv_count;
+		// }
+
+		// function isSolvable(puzzle) {
+		// 	var invCount = getInvCount(puzzle);
+		// 	return invCount % 2 == 0;
+		// }
+
 		var m = 0;
 		for (var i = 0; i < size; i++) {
 			for (var j = 0; j < size; j++) {
 				data[i][j] = dData[m++];
 			}
 		}
+		// if (isSolvable(data) == false) {
+		// 	removePrevious();
+		// 	selectlayout(size);
+		// }
 		console.log(data);
 
 		for (var i = 0; i < size; i++) {
@@ -137,7 +164,7 @@ function selectlayout(Size) {
 		}
 		console.log(data);
 		if (youWin === 1) {
-			document.body.classList.add("display-popup");
+			displayPopup();
 			var str = sw.etime.innerHTML;
 			var newStr = str.substring(0, str.length - 1);
 			document.getElementById("final-moves-value").innerHTML = newStr;
@@ -146,9 +173,13 @@ function selectlayout(Size) {
 
 			var row = table.insertRow(usercount + 1);
 			var cell1 = row.insertCell(0);
+			cell1.classList.add("user-serial-value");
 			var cell2 = row.insertCell(1);
+			cell2.classList.add("user-header-value");
 			var cell3 = row.insertCell(2);
+			cell3.classList.add("user-time-value");
 			var cell4 = row.insertCell(3);
+			cell4.classList.add("user-moves-value");
 
 			cell1.innerHTML = usercount;
 			cell2.innerHTML = "Yashwant Krishna";
