@@ -7,10 +7,8 @@ selectlayout(4);
 function pauseClick() {
 	if (flag === 0) {
 		flag = 1;
-		console.log("value of flag = 1");
 	} else if (flag === 1) {
 		flag = 0;
-		console.log("value of flag = 0");
 	}
 }
 
@@ -55,6 +53,53 @@ function selectlayout(Size) {
 		}
 	}
 
+	function getInvCount(arr) {
+		console.log("function 'getInvCount' ");
+		console.log(arr);
+		var inv_count = 0;
+		for (var i = 0; i < size * size - 1; i++) {
+			for (var j = i + 1; j < size * size; j++) {
+				console.log(arr[j]);
+				if (arr[j] && arr[i] && arr[i] > arr[j]) inv_count++;
+			}
+		}
+		console.log("Value of inv_count: " + inv_count);
+		return inv_count; //for some reason, this value is always coming out to be zero
+	}
+
+	function findXPosition(puzzle) {
+		console.log("In function findXPosition" + " ");
+		console.log(puzzle);
+		for (var i = size - 1; i >= 0; i--) {
+			for (var j = size - 1; j >= 0; j--) {
+				if (puzzle[i][j] == 0) {
+					console.log("value of size - i: " + Number(size - i)); //for some reason, this value isn't getting printed for 3 x 3 layout
+					return Number(size - i);
+				}
+			}
+		}
+	}
+
+	function isSolvable(puzzle, dData) {
+		console.log("In isSolvable function: ");
+		console.log(puzzle);
+		//for some reason, all are printing out 'true'
+		var invCount = getInvCount(dData);
+		if (size & 1) {
+			console.log(Boolean(!(invCount & 1)));
+			return Boolean(!(invCount & 1));
+		} else {
+			var pos = findXPosition(puzzle);
+			if (pos & 1) {
+				console.log(Boolean(!(invCount & 1)));
+				return Boolean(!(invCount & 1));
+			} else {
+				console.log(Boolean(invCount & 1));
+				return Boolean(invCount & 1);
+			}
+		}
+	}
+
 	function makeTiles() {
 		var tilesN = size * size - 1;
 		var tileW = (width - spacing * (size + 1)) / size;
@@ -76,38 +121,23 @@ function selectlayout(Size) {
 			dData[j] = temp;
 		}
 
-		// function getInvCount(puzzle) {
-		// 	var inv_count = 0;
-		// 	for (var i = 0; i < size * size - 1; i++) {
-		// 		for (var j = 0; j < size * size - 1; j++) {
-		// 			if (puzzle[j] && puzzle[i] && puzzle[i] > puzzle[j]) {
-		// 				inv_count++;
-		// 			}
-		// 		}
-		// 	}
-		// 	return inv_count;
-		// }
-
-		// function isSolvable(puzzle) {
-		// 	var invCount = getInvCount(puzzle);
-		// 	return invCount % 2 == 0;
-		// }
-
 		var m = 0;
 		for (var i = 0; i < size; i++) {
 			for (var j = 0; j < size; j++) {
 				data[i][j] = dData[m++];
 			}
 		}
-		// if (isSolvable(data) == false) {
-		// 	removePrevious();
-		// 	selectlayout(size);
-		// }
+
+		if (Boolean(isSolvable(data, dData))) {
+			console.log("Yes it is solvable");
+		} else {
+			console.log("No it is not solvable");
+		}
+
 		console.log(data);
 
 		for (var i = 0; i < size; i++) {
 			for (var j = 0; j < size; j++) {
-				console.log("x: " + i + " y: " + j + ", value of data[i][j] is " + data[i][j]);
 				var tile = $("<div>" + data[i][j] + "</div>");
 				tile.addClass("my-tile");
 				disabletouch();
@@ -119,7 +149,6 @@ function selectlayout(Size) {
 					tile.removeClass("my-tile");
 					tile.css("display", "none");
 				}
-				console.log("appending at x = " + i + " and y = " + j);
 				var col = j;
 				var row = i;
 
@@ -153,7 +182,6 @@ function selectlayout(Size) {
 		outeside: for (var i = 0; i < size; i++) {
 			for (var j = 0; j < size && m <= size * size - 2; j++) {
 				m++;
-				console.log(m);
 				if (data[i][j] == m) {
 					youWin = 1;
 				} else {
@@ -162,7 +190,6 @@ function selectlayout(Size) {
 				}
 			}
 		}
-		console.log(data);
 		if (youWin === 1) {
 			displayPopup();
 			var str = sw.etime.innerHTML;
@@ -186,8 +213,6 @@ function selectlayout(Size) {
 			cell3.innerHTML = newStr;
 			cell4.innerHTML = count;
 			usercount++;
-		} else {
-			console.log("Not yet win vro");
 		}
 	}
 
@@ -200,8 +225,6 @@ function selectlayout(Size) {
 			outer: for (y = 0; y < size; y++) {
 				for (x = 0; x < size; x++) {
 					if (data[y][x] == value) {
-						console.log("value: " + data[y][x] + " matched");
-						console.log("y: " + y + " x: " + x);
 						break outer;
 					}
 				}
@@ -226,7 +249,6 @@ function selectlayout(Size) {
 			if (count < 10) document.getElementById("moves-value").innerHTML = "0" + count;
 			else document.getElementById("moves-value").innerHTML = count;
 			dx = -1;
-			console.log("it moves left");
 		} else if (col < size - 1 && data[row][col + 1] === 0) {
 			count++;
 			if (count == 1) {
@@ -240,7 +262,6 @@ function selectlayout(Size) {
 			if (count < 10) document.getElementById("moves-value").innerHTML = "0" + count;
 			else document.getElementById("moves-value").innerHTML = count;
 			dx = 1;
-			console.log("it moves right");
 		} else if (row > 0 && data[row - 1][col] === 0) {
 			count++;
 			if (count == 1) {
@@ -254,7 +275,6 @@ function selectlayout(Size) {
 			if (count < 10) document.getElementById("moves-value").innerHTML = "0" + count;
 			else document.getElementById("moves-value").innerHTML = count;
 			dy = -1;
-			console.log("it moves up");
 		} else if (row < size - 1 && data[row + 1][col] === 0) {
 			count++;
 			if (count == 1) {
@@ -268,7 +288,6 @@ function selectlayout(Size) {
 			if (count < 10) document.getElementById("moves-value").innerHTML = "0" + count;
 			else document.getElementById("moves-value").innerHTML = count;
 			dy = 1;
-			console.log("it moves down");
 		} else {
 			return;
 		}
