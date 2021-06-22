@@ -54,26 +54,19 @@ function selectlayout(Size) {
 	}
 
 	function getInvCount(arr) {
-		console.log("function 'getInvCount' ");
-		console.log(arr);
 		var inv_count = 0;
 		for (var i = 0; i < size * size - 1; i++) {
 			for (var j = i + 1; j < size * size; j++) {
-				console.log(arr[j]);
 				if (arr[j] && arr[i] && arr[i] > arr[j]) inv_count++;
 			}
 		}
-		console.log("Value of inv_count: " + inv_count);
-		return inv_count; //for some reason, this value is always coming out to be zero
+		return inv_count;
 	}
 
 	function findXPosition(puzzle) {
-		console.log("In function findXPosition" + " ");
-		console.log(puzzle);
 		for (var i = size - 1; i >= 0; i--) {
 			for (var j = size - 1; j >= 0; j--) {
 				if (puzzle[i][j] == 0) {
-					console.log("value of size - i: " + Number(size - i)); //for some reason, this value isn't getting printed for 3 x 3 layout
 					return Number(size - i);
 				}
 			}
@@ -81,20 +74,14 @@ function selectlayout(Size) {
 	}
 
 	function isSolvable(puzzle, dData) {
-		console.log("In isSolvable function: ");
-		console.log(puzzle);
-		//for some reason, all are printing out 'true'
 		var invCount = getInvCount(dData);
 		if (size & 1) {
-			console.log(Boolean(!(invCount & 1)));
 			return Boolean(!(invCount & 1));
 		} else {
 			var pos = findXPosition(puzzle);
 			if (pos & 1) {
-				console.log(Boolean(!(invCount & 1)));
 				return Boolean(!(invCount & 1));
 			} else {
-				console.log(Boolean(invCount & 1));
 				return Boolean(invCount & 1);
 			}
 		}
@@ -114,27 +101,27 @@ function selectlayout(Size) {
 			dData.push(i);
 		}
 
-		for (var i = tilesN; i > 0; i--) {
-			const j = Math.floor(Math.random() * i);
-			const temp = dData[i];
-			dData[i] = dData[j];
-			dData[j] = temp;
-		}
+		function randomize() {
+			for (var i = tilesN; i > 0; i--) {
+				const j = Math.floor(Math.random() * i);
+				const temp = dData[i];
+				dData[i] = dData[j];
+				dData[j] = temp;
+			}
 
-		var m = 0;
-		for (var i = 0; i < size; i++) {
-			for (var j = 0; j < size; j++) {
-				data[i][j] = dData[m++];
+			var m = 0;
+			for (var i = 0; i < size; i++) {
+				for (var j = 0; j < size; j++) {
+					data[i][j] = dData[m++];
+				}
+			}
+
+			if (Boolean(isSolvable(data, dData))) {
+			} else {
+				randomize();
 			}
 		}
-
-		if (Boolean(isSolvable(data, dData))) {
-			console.log("Yes it is solvable");
-		} else {
-			console.log("No it is not solvable");
-		}
-
-		console.log(data);
+		randomize();
 
 		for (var i = 0; i < size; i++) {
 			for (var j = 0; j < size; j++) {
