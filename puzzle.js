@@ -127,6 +127,7 @@ function selectlayout(Size) {
 			for (var j = 0; j < size; j++) {
 				var tile = $("<div>" + data[i][j] + "</div>");
 				tile.addClass("my-tile");
+				tile.addClass("my-color-tile");
 				disabletouch();
 				field.append(tile);
 				tile.width(tileW).height(tileH);
@@ -145,6 +146,7 @@ function selectlayout(Size) {
 
 		$(".my-tile").click(tileClicked);
 		$(".my-tile").click(checkWin);
+		// $(".my-tile").click(colorTile);
 	}
 
 	function positionTile(tile, col, row, smooth) {
@@ -163,6 +165,26 @@ function selectlayout(Size) {
 			);
 		}
 	}
+
+	// function colorTile(data) {
+	// 	console.log("this function is called");
+	// 	console.log(data);
+	// 	var m = 0;
+	// 	for (var i = 0; i < size; i++) {
+	// 		for (var j = 0; j < size && m <= size * size - 2; j++) {
+	// 			console.log(
+	// 				"tile at " + i + " and " + j + " value is " + document.getElementsByClassName("my-color-tile")[i * size + j].innerHTML
+	// 			);
+	// 			m++;
+	// 			if (data[i][j] == m) {
+	// 				console.log("tile at " + i + " and " + j + " is at right place");
+	// 				document.getElementsByClassName("my-color-tile")[i * size + j].style.color = "black";
+	// 			} else {
+	// 				document.getElementsByClassName("my-color-tile")[i * size + j].style.color = "#a048ab";
+	// 			}
+	// 		}
+	// 	}
+	// }
 
 	function checkWin() {
 		var m = 0;
@@ -282,6 +304,8 @@ function selectlayout(Size) {
 		data[row + dy][col + dx] = value;
 		data[row][col] = 0;
 		positionTile(tile, col + dx, row + dy, true);
+		console.log(data);
+		colorTile(data);
 	}
 
 	makeField();
@@ -289,19 +313,6 @@ function selectlayout(Size) {
 	makeTilesBg();
 }
 
-// document.getElementById("sw-go").addEventListener("click", function () {
-// 	var tileElements = document.getElementsByClassName("my-tile");
-// 	if (tileElements[0].disabled === true) {
-// 		for (var i = 0; i < tileElements.length; i++) {
-// 			tileElements[i].disabled = false;
-// 		}
-// 	}
-// 	if (tileElements[0].disabled === false) {
-// 		for (var i = 0; i < tileElements.length; i++) {
-// 			tileElements[i].disabled = true;
-// 		}
-// 	}
-// });
 function disabletouch() {
 	$(document).ready(function () {
 		$(".my-tile").disableSelection();
