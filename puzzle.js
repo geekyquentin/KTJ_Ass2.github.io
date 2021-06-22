@@ -207,20 +207,26 @@ function selectlayout(Size) {
 			sw.stop();
 			var table = document.getElementById("myTable");
 
-			var row = table.insertRow(usercount + 1);
-			var cell1 = row.insertCell(0);
-			cell1.classList.add("user-serial-value");
-			var cell2 = row.insertCell(1);
-			cell2.classList.add("user-header-value");
-			var cell3 = row.insertCell(2);
-			cell3.classList.add("user-time-value");
-			var cell4 = row.insertCell(3);
-			cell4.classList.add("user-moves-value");
+			localStorage.setItem("serialNo", usercount);
+			localStorage.setItem("username", "Yashwant Krishna");
+			localStorage.setItem("time", newStr);
+			localStorage.setItem("count", count);
 
-			cell1.innerHTML = usercount;
-			cell2.innerHTML = "Yashwant Krishna";
-			cell3.innerHTML = newStr;
-			cell4.innerHTML = count;
+			if (Number(localStorage.getItem("serialNo")) >= 0) {
+				var row = table.insertRow(usercount + 1);
+				var cell1 = row.insertCell(0);
+				cell1.classList.add("user-serial-value");
+				var cell2 = row.insertCell(1);
+				cell2.classList.add("user-header-value");
+				var cell3 = row.insertCell(2);
+				cell3.classList.add("user-time-value");
+				var cell4 = row.insertCell(3);
+				cell4.classList.add("user-moves-value");
+			}
+			cell1.innerHTML = localStorage.getItem("serialNo");
+			cell2.innerHTML = localStorage.getItem("username");
+			cell3.innerHTML = localStorage.getItem("time");
+			cell4.innerHTML = localStorage.getItem("count");
 			usercount++;
 		}
 	}
@@ -304,8 +310,8 @@ function selectlayout(Size) {
 		data[row + dy][col + dx] = value;
 		data[row][col] = 0;
 		positionTile(tile, col + dx, row + dy, true);
-		console.log(data);
-		colorTile(data);
+		// console.log(data);
+		// colorTile(data);
 	}
 
 	makeField();
