@@ -2,7 +2,8 @@ body.theme-dark {
 	background-color: #0d1117;
 }
 
-.theme-dark .dropbtn-themeswitch {
+.theme-dark .dropbtn-themeswitch,
+.theme-dark .new-game-popup-btn {
 	background-color: #58a6ff;
 	color: white;
 }
@@ -40,6 +41,14 @@ body.theme-dark {
 .theme-dark .scoreboard-table tr th {
 	background-color: #58a6ff;
 	color: white;
+}
+
+.theme-dark .options-options:disabled,
+.theme-dark .options-options:disabled:hover,
+.theme-dark .p-btn:disabled,
+.theme-dark .p-btn:disabled:hover {
+	background-color: #58a6ff;
+	color: rgba(255, 255, 255, 0.5);
 }
 
 .theme-dark .newgame:hover,

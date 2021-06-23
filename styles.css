@@ -4,27 +4,44 @@
 	box-sizing: border-box;
 }
 
-.pop-up-win {
+.stop-scrolling {
+	position: relative;
+	overflow-y: scroll;
+}
+
+.display-popup {
 	display: none;
 	position: fixed;
-	top: 20%;
+	top: 24%;
 	left: 50%;
 	transform: translate(-50%, 0);
-	background-color: aqua;
 	padding: 1rem;
-	border-radius: 1rem;
+	border-radius: 0.6rem;
 	text-align: center;
 	z-index: 5;
 }
 
-.display-popup .pop-up-win {
-	display: block;
+.display-popup h3 {
+	font-family: "Oswald", sans-serif;
 }
 
 .new-game-popup-btn {
 	padding: 0.3rem 1.5rem;
 	border: none;
 	border-radius: 0.4rem;
+	font-size: 1.2rem;
+	font-weight: 600;
+}
+
+.fullscreen-container {
+	display: none;
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background: rgba(90, 90, 90, 0.5);
+	z-index: 9999;
 }
 
 .fa-check {
@@ -359,10 +376,12 @@
 }
 
 @media only screen and (max-width: 521px) {
-	.dropbtn {
-		zoom: 0.8;
-	}
-	.dropdown-content-theme {
+	.dropbtn,
+	.dropdown-content-theme,
+	.pause-button,
+	.my-field,
+	.scoreboard,
+	.display-popup {
 		zoom: 0.8;
 	}
 	.heading {
@@ -373,17 +392,8 @@
 		transform: scale(0.8);
 		margin: auto;
 	}
-	.pause-button {
-		zoom: 0.8;
-	}
 	.options {
 		zoom: 0.75;
-	}
-	.my-field {
-		zoom: 0.8;
-	}
-	.scoreboard {
-		zoom: 0.8;
 	}
 }
 

@@ -52,6 +52,9 @@
 			href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Londrina+Shadow&family=Permanent+Marker&display=swap"
 			rel="stylesheet"
 		/>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet" />
 	</head>
 
 	<body>
@@ -69,10 +72,12 @@
 		</div>
 
 		<div>
-			<div class="pop-up-win">
-				<h3>Congratulations!</h3>
-				<p>You finished the puzzle in <span id="final-moves-value"></span> seconds</p>
-				<button class="new-game-popup-btn" id="popup-newgame">New Game</button>
+			<div class="fullscreen-container">
+				<div class="display-popup">
+					<h3>CONGRATULATIONS!</h3>
+					<p>You solved the puzzle in <span id="final-moves-value"></span> seconds</p>
+					<button class="new-game-popup-btn" id="popup-newgame">New Game</button>
+				</div>
 			</div>
 			<h1 class="heading">15 puzzle game</h1>
 			<div class="newgame-time-moves">

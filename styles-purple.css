@@ -2,7 +2,8 @@ body.theme-purple {
 	background-color: #57407c;
 }
 
-.theme-purple .dropbtn-themeswitch {
+.theme-purple .dropbtn-themeswitch,
+.theme-purple .new-game-popup-btn {
 	background-color: rgb(61, 41, 99);
 	color: white;
 }
@@ -39,6 +40,14 @@ body.theme-purple {
 .theme-purple .scoreboard-table tr th {
 	background-color: rgb(61, 41, 99);
 	color: white;
+}
+
+.theme-purple .options-options:disabled,
+.theme-purple .options-options:disabled:hover,
+.theme-purple .p-btn:disabled,
+.theme-purple .p-btn:disabled:hover {
+	background-color: rgb(61, 41, 99);
+	color: rgba(255, 255, 255, 0.5);
 }
 
 .theme-purple .newgame:hover,

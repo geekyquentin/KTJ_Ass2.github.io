@@ -2,7 +2,8 @@ body.theme-special {
 	background-color: #263543;
 }
 
-.theme-special .dropbtn-themeswitch {
+.theme-special .dropbtn-themeswitch,
+.theme-special .new-game-popup-btn {
 	background-color: #ffd43b;
 	color: #263543;
 }
@@ -40,6 +41,14 @@ body.theme-special {
 .theme-special .scoreboard-table tr th {
 	background-color: #ffd43b;
 	color: #263543;
+}
+
+.theme-special .options-options:disabled,
+.theme-special .options-options:disabled:hover,
+.theme-special .p-btn:disabled,
+.theme-special .p-btn:disabled:hover {
+	background-color: #ffd43b;
+	color: rgba(255, 255, 255, 0.5);
 }
 
 .theme-special .newgame:hover,

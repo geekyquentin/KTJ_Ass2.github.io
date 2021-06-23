@@ -13,10 +13,26 @@ function pauseClick() {
 	}
 }
 
+
+function disableScroll() {
+	// Get the current page scroll position
+	scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+	scrollLeft = window.pageXOffset || document.documentElement.scrollLeft,
+
+		// if any scroll is attempted, set this to the previous value
+		window.onscroll = function () {
+			window.scrollTo(scrollLeft, scrollTop);
+		};
+}
+
+function enableScroll() {
+	window.onscroll = function () { };
+}
+
 function displayPopup() {
-	setTimeout(function () {
-		window.location.animate = document.body.classList.add("display-popup");
-	}, 400);
+	$(".display-popup").fadeTo(200, 1);
+	$(".fullscreen-container").fadeTo(200, 1);
+	disableScroll();
 }
 
 function selectlayout(Size) {
@@ -168,9 +184,13 @@ function selectlayout(Size) {
 		}
 
 		if (data[row][col] === (row * size + col + 1)) {
-			tile.addClass("color-tile");
+			window.setTimeout(function () {
+				tile.addClass("color-tile");
+			}, 150);
 		} else {
-			tile.removeClass("color-tile");
+			window.setTimeout(function () {
+				tile.removeClass("color-tile");
+			}, 100);
 		}
 	}
 
@@ -346,6 +366,9 @@ document.getElementById("popup-newgame").addEventListener("click", function () {
 	document.getElementById("sw-go").disabled = true;
 	count = "00";
 	document.getElementById("moves-value").innerHTML = count;
-	document.body.classList.remove("display-popup");
+	$(".display-popup").fadeOut(200);
 	sw.reset();
+	$(".fullscreen-container").fadeOut(200);
+	// document.body.classList.remove("stop-scrolling");
+	enableScroll();
 });

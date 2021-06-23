@@ -2,7 +2,12 @@ body {
 	background-color: #f0f4fb;
 }
 
-.dropbtn-themeswitch {
+.display-popup {
+	background-color: white;
+}
+
+.dropbtn-themeswitch,
+.new-game-popup-btn {
 	background-color: #dc244e;
 	color: white;
 }
@@ -44,8 +49,11 @@ body {
 }
 
 .options-options:disabled,
-.options-options:disabled:hover {
+.options-options:disabled:hover,
+.p-btn:disabled,
+.p-btn:disabled:hover {
 	background-color: #dc244e;
+	color: rgba(255, 255, 255, 0.5);
 }
 
 .newgame:hover,
