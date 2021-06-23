@@ -48,7 +48,7 @@ body.theme-special {
 .theme-special .p-btn:disabled,
 .theme-special .p-btn:disabled:hover {
 	background-color: #ffd43b;
-	color: rgba(255, 255, 255, 0.5);
+	color: rgba(0, 0, 0, 0.5);
 }
 
 .theme-special .newgame:hover,
