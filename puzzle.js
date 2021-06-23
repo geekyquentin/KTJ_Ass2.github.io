@@ -1,5 +1,6 @@
 var flag = 0;
 var youWin = 0;
+var colorTile = 0;
 var Size = 4;
 var usercount = 0;
 selectlayout(4);
@@ -117,7 +118,9 @@ function selectlayout(Size) {
 			}
 
 			if (Boolean(isSolvable(data, dData))) {
-			} else {
+			} else if (!Boolean(isSolvable(data, dData))) {
+				randomize();
+			} else if (youWin === 1) {
 				randomize();
 			}
 		}
@@ -131,7 +134,7 @@ function selectlayout(Size) {
 				disabletouch();
 				field.append(tile);
 				tile.width(tileW).height(tileH);
-				tile.css("font-size", Math.floor((tileH * 1.4) / 3) + "px");
+				tile.css("font-size", Math.floor((tileH * 2) / 3) + "px");
 				tile.css("line-height", tileH + "px");
 				if (data[i][j] === 0) {
 					tile.removeClass("my-tile");
@@ -146,7 +149,6 @@ function selectlayout(Size) {
 
 		$(".my-tile").click(tileClicked);
 		$(".my-tile").click(checkWin);
-		// $(".my-tile").click(colorTile);
 	}
 
 	function positionTile(tile, col, row, smooth) {
@@ -164,27 +166,13 @@ function selectlayout(Size) {
 				200
 			);
 		}
-	}
 
-	// function colorTile(data) {
-	// 	console.log("this function is called");
-	// 	console.log(data);
-	// 	var m = 0;
-	// 	for (var i = 0; i < size; i++) {
-	// 		for (var j = 0; j < size && m <= size * size - 2; j++) {
-	// 			console.log(
-	// 				"tile at " + i + " and " + j + " value is " + document.getElementsByClassName("my-color-tile")[i * size + j].innerHTML
-	// 			);
-	// 			m++;
-	// 			if (data[i][j] == m) {
-	// 				console.log("tile at " + i + " and " + j + " is at right place");
-	// 				document.getElementsByClassName("my-color-tile")[i * size + j].style.color = "black";
-	// 			} else {
-	// 				document.getElementsByClassName("my-color-tile")[i * size + j].style.color = "#a048ab";
-	// 			}
-	// 		}
-	// 	}
-	// }
+		if (data[row][col] === (row * size + col + 1)) {
+			tile.addClass("color-tile");
+		} else {
+			tile.removeClass("color-tile");
+		}
+	}
 
 	function checkWin() {
 		var m = 0;
@@ -310,8 +298,6 @@ function selectlayout(Size) {
 		data[row + dy][col + dx] = value;
 		data[row][col] = 0;
 		positionTile(tile, col + dx, row + dy, true);
-		// console.log(data);
-		// colorTile(data);
 	}
 
 	makeField();

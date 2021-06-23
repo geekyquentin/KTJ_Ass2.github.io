@@ -65,9 +65,13 @@ body {
 
 .my-tile {
 	background-color: #ffc;
-	color: #a048ab;
+	color: #dc244e;
 }
 
 .my-tile-bg {
-	background-color: rgb(255, 255, 0);
+	background-color: #fff !important;
+}
+
+.color-tile {
+	background-color: rgb(255, 255, 106);
 }

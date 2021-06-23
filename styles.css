@@ -345,7 +345,8 @@
 	border-radius: 10px;
 	vertical-align: middle;
 	text-align: center;
-	font-weight: bold;
+	font-family: "Londrina Shadow", cursive;
+	font-weight: 900;
 	cursor: pointer;
 	position: absolute;
 	z-index: 1;

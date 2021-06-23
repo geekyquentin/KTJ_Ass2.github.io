@@ -62,10 +62,15 @@ body.theme-dark {
 }
 
 .theme-dark .my-tile {
-	background-color: #ffc;
-	color: #a048ab;
+	background-color: rgb(120, 238, 169);
+	color: white;
 }
 
 .theme-dark .my-tile-bg {
-	background-color: #1c2128;
+	background-color: #2f3846 !important;
+}
+
+.theme-dark .color-tile {
+	background-color: rgb(232, 138, 69);
+	color: white;
 }

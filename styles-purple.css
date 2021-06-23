@@ -61,10 +61,15 @@ body.theme-purple {
 }
 
 .theme-purple .my-tile {
-	background-color: #ffc;
-	color: #a048ab;
+	background-color: rgb(106, 198, 184);
+	color: white;
 }
 
 .theme-purple .my-tile-bg {
-	background-color: rgb(61, 41, 99);
+	background-color: rgb(61, 41, 99) !important;
+}
+
+.theme-purple .color-tile {
+	background-color: rgb(232, 138, 69);
+	color: white;
 }

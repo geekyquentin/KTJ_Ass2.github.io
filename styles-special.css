@@ -63,10 +63,15 @@ body.theme-special {
 }
 
 .theme-special .my-tile {
-	background-color: #ffc;
-	color: #a048ab;
+	background-color: rgb(255, 253, 130);
+	color: #2e4153;
 }
 
 .theme-special .my-tile-bg {
-	background-color: #ffd43b;
+	background-color: #364c61 !important;
+}
+
+.theme-special .color-tile {
+	background-color: teal;
+	color: white;
 }

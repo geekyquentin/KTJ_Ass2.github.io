@@ -62,10 +62,15 @@ body.theme-dark2 {
 }
 
 .theme-dark2 .my-tile {
-	background-color: #ffc;
-	color: #a048ab;
+	background-color: lavender;
+	color: #404142;
 }
 
 .theme-dark2 .my-tile-bg {
-	background-color: #1c2128;
+	background-color: #2f3846 !important;
+}
+
+.theme-dark2 .color-tile {
+	background-color: teal;
+	color: white;
 }
