@@ -423,6 +423,9 @@
 	.display-popup {
 		zoom: 0.8;
 	}
+	.gamepause {
+		margin-top: -22.57rem;
+	}
 	.heading {
 		font-size: 13vw;
 	}
