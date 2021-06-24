@@ -49,6 +49,27 @@
 	font-weight: 600;
 }
 
+.gamepause {
+	height: 22rem;
+	width: 22rem;
+	background-color: rgba(90, 90, 90, 0.2);
+	margin: auto;
+	position: relative;
+	margin-top: -22.4rem;
+	border-radius: 0.7rem;
+	z-index: 9999;
+	display: none;
+	text-align: center;
+}
+
+.fa-play-circle {
+	transform: translateY(9.08rem);
+	position: relative;
+	color: white;
+	z-index: 10000;
+	cursor: pointer;
+}
+
 .fullscreen-container {
 	display: none;
 	position: fixed;
@@ -315,21 +336,6 @@
 	zoom: 1.1;
 }
 
-.grid {
-	display: grid;
-	justify-content: center;
-	grid-template-columns: 80px 80px 80px 80px;
-	grid-template-rows: 80px 80px 80px 80px;
-}
-
-.grid button {
-	border-radius: 0.6rem;
-	margin: 0.2rem;
-	font-size: 2rem;
-	font-weight: 800;
-	border: none;
-}
-
 /* .scoreboard {
 	display: none;
 	position: absolute;
@@ -412,6 +418,7 @@
 	.dropdown-content-theme,
 	.pause-button,
 	.my-field,
+	.gamepause,
 	/* .scoreboard, */
 	.display-popup {
 		zoom: 0.8;

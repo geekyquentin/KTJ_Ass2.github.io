@@ -8,9 +8,19 @@ selectlayout(4);
 function pauseClick() {
 	if (flag === 0) {
 		flag = 1;
+		$(".gamepause").fadeTo(200, 1);
+		document.getElementById('sw-go').value = "Play";
 	} else if (flag === 1) {
 		flag = 0;
+		$(".gamepause").fadeOut(200);
+		document.getElementById('sw-go').value = "Pause";
 	}
+}
+
+function gamepause() {
+	flag = 0;
+	$(".gamepause").fadeOut(200);
+	document.getElementById('sw-go').value = "Pause";
 }
 
 

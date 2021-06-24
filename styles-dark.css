@@ -83,3 +83,7 @@ body.theme-dark {
 	background-color: rgb(232, 138, 69);
 	color: white;
 }
+
+.theme-dark .gamepause {
+	background: rgba(90, 90, 90, 0.5);
+}

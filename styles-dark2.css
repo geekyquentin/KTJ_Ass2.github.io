@@ -83,3 +83,7 @@ body.theme-dark2 {
 	background-color: teal;
 	color: white;
 }
+
+.theme-dark2 .gamepause {
+	background: rgba(90, 90, 90, 0.5);
+}

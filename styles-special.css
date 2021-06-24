@@ -84,3 +84,7 @@ body.theme-special {
 	background-color: teal;
 	color: white;
 }
+
+.theme-special .gamepause {
+	background: rgba(90, 90, 90, 0.5);
+}
