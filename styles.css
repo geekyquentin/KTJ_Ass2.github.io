@@ -27,7 +27,8 @@
 
 .display-popup {
 	display: none;
-	position: fixed;
+	position: absolute;
+	min-width: 20rem;
 	top: 24%;
 	left: 50%;
 	transform: translate(-50%, 0);

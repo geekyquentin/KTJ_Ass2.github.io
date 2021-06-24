@@ -221,7 +221,7 @@ function selectlayout(Size) {
 			displayPopup();
 			var str = sw.etime.innerHTML;
 			var newStr = str.substring(0, str.length - 1);
-			document.getElementById("final-moves-value").innerHTML = newStr;
+			document.getElementById("final-moves-value").innerHTML = newStr + " seconds";
 			sw.stop();
 			// if (size === 3)
 			// 	var table = document.getElementById("myTable3");
