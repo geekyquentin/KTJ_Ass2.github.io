@@ -55,15 +55,15 @@
 	background-color: rgba(90, 90, 90, 0.2);
 	margin: auto;
 	position: relative;
-	margin-top: -22.4rem;
-	border-radius: 0.7rem;
+	margin-top: -22.43rem;
+	border-radius: 0.8rem;
 	z-index: 9999;
 	display: none;
 	text-align: center;
 }
 
 .fa-play-circle {
-	transform: translateY(9.08rem);
+	transform: translateY(9.17rem);
 	position: relative;
 	color: white;
 	z-index: 10000;
