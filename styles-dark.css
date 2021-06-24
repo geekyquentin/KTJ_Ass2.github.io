@@ -38,7 +38,8 @@ body.theme-dark {
 .theme-dark .newgame,
 .theme-dark .time-moves,
 .theme-dark .options-options,
-.theme-dark .scoreboard-table tr th {
+.theme-dark .scoreboard-table tr th,
+.theme-dark .bestscore {
 	background-color: #58a6ff;
 	color: white;
 }

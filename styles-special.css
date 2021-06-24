@@ -38,7 +38,8 @@ body.theme-special {
 .theme-special .newgame,
 .theme-special .time-moves,
 .theme-special .options-options,
-.theme-special .scoreboard-table tr th {
+.theme-special .scoreboard-table tr th,
+.theme-special .bestscore {
 	background-color: #ffd43b;
 	color: #263543;
 }

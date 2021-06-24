@@ -37,7 +37,8 @@ body.theme-purple {
 .theme-purple .newgame,
 .theme-purple .time-moves,
 .theme-purple .options-options,
-.theme-purple .scoreboard-table tr th {
+.theme-purple .scoreboard-table tr th,
+.theme-purple .bestscore {
 	background-color: rgb(61, 41, 99);
 	color: white;
 }
