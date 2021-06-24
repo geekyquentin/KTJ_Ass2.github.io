@@ -9,6 +9,20 @@
 	overflow-y: scroll;
 }
 
+.fa-trophy {
+	margin-right: 0.5rem;
+}
+
+.bestscore {
+	position: absolute;
+	left: 50%;
+	transform: translate(-50%, -30%);
+	border-radius: 0.5rem;
+	padding: 1rem;
+	font-weight: 700;
+	font-size: 1.2rem;
+}
+
 .display-popup {
 	display: none;
 	position: fixed;
@@ -312,6 +326,20 @@
 	border: none;
 }
 
+/* .scoreboard {
+	display: none;
+	position: absolute;
+	left: 50%;
+	transform: translate(-50%, 0);
+}
+
+.ss3,
+.ss4,
+.ss5,
+.ss6 {
+	display: block;
+}
+
 .scoreboard-title {
 	text-align: center;
 	margin-top: 4rem;
@@ -330,7 +358,7 @@
 	padding: 0.6rem 1rem;
 	border-bottom: 0.5px solid white;
 	font-size: 1.1rem;
-}
+} */
 
 .user-serial {
 	border-top-left-radius: 0.5rem;
@@ -380,7 +408,7 @@
 	.dropdown-content-theme,
 	.pause-button,
 	.my-field,
-	.scoreboard,
+	/* .scoreboard, */
 	.display-popup {
 		zoom: 0.8;
 	}
@@ -397,7 +425,7 @@
 	}
 }
 
-@media only screen and (max-width: 432px) {
+/* @media only screen and (max-width: 432px) {
 	.newgame-time-moves {
 		width: 23rem;
 	}
@@ -422,7 +450,7 @@
 	.scoreboard {
 		zoom: 0.6;
 	}
-}
+} */
 /* h1 {
 	font-size: 5.9vw;
 }

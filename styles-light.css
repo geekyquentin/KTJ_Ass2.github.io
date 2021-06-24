@@ -43,7 +43,8 @@ body {
 .newgame,
 .time-moves,
 .options-options,
-.scoreboard-table tr th {
+.scoreboard-table tr th,
+.bestscore {
 	background-color: #dc244e;
 	color: white;
 }

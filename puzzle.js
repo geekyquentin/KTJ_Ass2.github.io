@@ -1,7 +1,7 @@
 var flag = 0;
 var youWin = 0;
-var colorTile = 0;
 var Size = 4;
+var userdata = [];
 var usercount = 0;
 selectlayout(4);
 
@@ -213,29 +213,43 @@ function selectlayout(Size) {
 			var newStr = str.substring(0, str.length - 1);
 			document.getElementById("final-moves-value").innerHTML = newStr;
 			sw.stop();
-			var table = document.getElementById("myTable");
+			// if (size === 3)
+			// 	var table = document.getElementById("myTable3");
+			// if (size === 4)
+			// 	var table = document.getElementById("myTable4");
+			// if (size === 5)
+			// 	var table = document.getElementById("myTable5");
+			// if (size === 6)
+			// 	var table = document.getElementById("myTable6");
 
-			localStorage.setItem("serialNo", usercount);
-			localStorage.setItem("username", "Yashwant Krishna");
-			localStorage.setItem("time", newStr);
-			localStorage.setItem("count", count);
+			// localStorage.setItem("serialNo[usercount]", usercount);
+			// localStorage.setItem("username[usercount]", "Yashwant Krishna");
+			// localStorage.setItem("time[usercount]", newStr);
+			// localStorage.setItem("count[usercount]", count);
 
-			if (Number(localStorage.getItem("serialNo")) >= 0) {
-				var row = table.insertRow(usercount + 1);
-				var cell1 = row.insertCell(0);
-				cell1.classList.add("user-serial-value");
-				var cell2 = row.insertCell(1);
-				cell2.classList.add("user-header-value");
-				var cell3 = row.insertCell(2);
-				cell3.classList.add("user-time-value");
-				var cell4 = row.insertCell(3);
-				cell4.classList.add("user-moves-value");
-			}
-			cell1.innerHTML = localStorage.getItem("serialNo");
-			cell2.innerHTML = localStorage.getItem("username");
-			cell3.innerHTML = localStorage.getItem("time");
-			cell4.innerHTML = localStorage.getItem("count");
-			usercount++;
+			// if (Number(localStorage.getItem("serialNo")) >= 0) {
+			// 	var row = table.insertRow(usercount + 1);
+			// 	var cell1 = row.insertCell(0);
+			// 	cell1.classList.add("user-serial-value");
+			// 	var cell2 = row.insertCell(1);
+			// 	cell2.classList.add("user-header-value");
+			// 	var cell3 = row.insertCell(2);
+			// 	cell3.classList.add("user-time-value");
+			// 	var cell4 = row.insertCell(3);
+			// 	cell4.classList.add("user-moves-value");
+			// }
+			// cell1.innerHTML = localStorage.getItem("serialNo[usercount]");
+			// cell2.innerHTML = localStorage.getItem("username[usercount]");
+			// cell3.innerHTML = localStorage.getItem("time[usercount]");
+			// cell4.innerHTML = localStorage.getItem("count[usercount]");
+			// usercount++;
+			userdata.push(sw.etime.innerHTML);
+			userdata.sort();
+			JSON.stringify(userdata);
+			localStorage.setItem("quentinTarantino", JSON.stringify(userdata));
+			var retrievedData = localStorage.getItem("quentinTarantino");
+			var movies2 = JSON.parse(retrievedData);
+			document.getElementById("bestscore").innerHTML = movies2[0];
 		}
 	}
 

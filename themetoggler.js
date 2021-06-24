@@ -108,6 +108,11 @@ document.getElementById("toggle-3").addEventListener("click", function () {
 	document.body.classList.remove("display-tick-t4");
 	document.body.classList.remove("display-tick-t5");
 	document.body.classList.remove("display-tick-t6");
+
+	// document.getElementById('s3').classList.add('ss3');
+	// document.getElementById('s4').classList.remove('ss4');
+	// document.getElementById('s5').classList.remove('ss5');
+	// document.getElementById('s6').classList.remove('ss6');
 	removePrevious();
 	Size = 3;
 	selectlayout(3);
@@ -117,6 +122,11 @@ document.getElementById("toggle-4").addEventListener("click", function () {
 	document.body.classList.remove("display-tick-t3");
 	document.body.classList.remove("display-tick-t5");
 	document.body.classList.remove("display-tick-t6");
+
+	// document.getElementById('s4').classList.add('ss4');
+	// document.getElementById('s3').classList.remove('ss3');
+	// document.getElementById('s5').classList.remove('ss5');
+	// document.getElementById('s6').classList.remove('ss6');
 	removePrevious();
 	Size = 4;
 	selectlayout(4);
@@ -126,6 +136,11 @@ document.getElementById("toggle-5").addEventListener("click", function () {
 	document.body.classList.remove("display-tick-t4");
 	document.body.classList.remove("display-tick-t3");
 	document.body.classList.remove("display-tick-t6");
+
+	// document.getElementById('s5').classList.add('ss5');
+	// document.getElementById('s4').classList.remove('ss4');
+	// document.getElementById('s3').classList.remove('ss3');
+	// document.getElementById('s6').classList.remove('ss6');
 	removePrevious();
 	Size = 5;
 	selectlayout(5);
@@ -135,6 +150,11 @@ document.getElementById("toggle-6").addEventListener("click", function () {
 	document.body.classList.remove("display-tick-t4");
 	document.body.classList.remove("display-tick-t5");
 	document.body.classList.remove("display-tick-t3");
+
+	// document.getElementById('s6').classList.add('ss6');
+	// document.getElementById('s4').classList.remove('ss4');
+	// document.getElementById('s5').classList.remove('ss5');
+	// document.getElementById('s3').classList.remove('ss3');
 	removePrevious();
 	Size = 6;
 	selectlayout(6);
@@ -185,7 +205,16 @@ window.addEventListener("load", function () {
 	sw.init();
 	this.document.getElementById("sw-go").disabled = true;
 	document.body.classList.remove("display-popup");
+	var retrievedData = localStorage.getItem("quentinTarantino");
+	var movies2 = JSON.parse(retrievedData);
+	document.getElementById("bestscore").innerHTML = movies2[0];
 });
+
+// window.onbeforeunload = function () {
+// 	var retrievedData = localStorage.getItem("quentinTarantino");
+// 	var movies2 = JSON.parse(retrievedData);
+// 	document.getElementById("bestscore").innerHTML = movies2[0];
+// }
 
 // Close the dropdown menu if the user clicks outside of it
 window.onclick = function (event) {
