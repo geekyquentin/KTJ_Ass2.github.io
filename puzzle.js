@@ -378,6 +378,9 @@ document.getElementById("sw-rst").addEventListener("click", function () {
 	document.getElementById("sw-go").disabled = true;
 	count = "00";
 	document.getElementById("moves-value").innerHTML = count;
+	flag = 0;
+	$(".gamepause").fadeOut(200);
+	document.getElementById('sw-go').value = "Pause";
 });
 
 document.getElementById("popup-newgame").addEventListener("click", function () {
