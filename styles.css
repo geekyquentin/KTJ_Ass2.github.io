@@ -409,6 +409,7 @@
 	.pause-button,
 	.my-field,
 	/* .scoreboard, */
+	.bestscore,
 	.display-popup {
 		zoom: 0.8;
 	}
